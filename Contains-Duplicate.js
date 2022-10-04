@@ -3,20 +3,18 @@
 // https://leetcode.com/problems/contains-duplicate/
 
 // Answer:
+// seperate the situation:
+// only one or two number in the nums array
+// more than two numbers in the nums array
 function containsDuplicate(nums) {
-  const ln = nums.length
-
-  // seperate the situation:
-  // only one or two number in the nums array
-  // more than two numbers in the nums array
-  if (ln === 1) {
+  if (nums.length === 1) {
     return false
-  } else if (ln === 2) {
+  } else if (nums.length === 2) {
     return nums[0] === nums[1] ? true : false
   } else {
     // use Set and its method to check if the number in the nums array shows twice
     let set = new Set()
-    for (let i = 0; i < ln; i++) {
+    for (let i = 0; i < nums.length; i++) {
       if (set.has(nums[i])) {
         return true
       }
@@ -25,6 +23,29 @@ function containsDuplicate(nums) {
     return false
   }
 }
+// second try:
+// Runtime: 86 ms, faster than 96.48% of JavaScript online submissions for Contains Duplicate.
+// Memory Usage: 50.1 MB, less than 86.19% of JavaScript online submissions for Contains Duplicate.
+
+// function containsDuplicate(nums) {
+//   const ln = nums.length
+//   if (ln === 1) {
+//     return false
+//   } else if (ln === 2) {
+//     return nums[0] === nums[1] ? true : false
+//   } else {
+//     // use Set and its method to check if the number in the nums array shows twice
+//     let set = new Set()
+//     for (let i = 0; i < ln; i++) {
+//       if (set.has(nums[i])) {
+//         return true
+//       }
+//       set.add(nums[i])
+//     }
+//     return false
+//   }
+// }
+// first try:
 // Runtime: 97 ms, faster than 89.78% of JavaScript online submissions for Contains Duplicate.
 // Memory Usage: 50.3 MB, less than 82.03% of JavaScript online submissions for Contains Duplicate.
 
