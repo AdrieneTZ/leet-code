@@ -2,6 +2,7 @@
 // An integer n is a power of two, if there exists an integer x such that n == 2x.
 // https://leetcode.com/problems/power-of-two/
 
+// Constraints: -2^31 <= n <= 2^31 - 1
 /**
  * @param {number} n
  * @return {boolean}
